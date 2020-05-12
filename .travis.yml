@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+- '12'
+before_install:
+- npm install -g @angular/cli
+install: npm install
+branches:
+  only:
+  - master
+deploy:
+  provider: heroku
+  app: tajirastan
+  api_key:
+    secure: G34ZfGoonNpz28FqvwwT9RbYzS5CH5SUMrdKuano0Kvqnh/huSQPhEaNav0MCwWi0bUdq8tXtpbt33649uoeds7yLjUY7UZLTFhfkTetTW78uUqdTeoJEbaiwGZijNmr7vkNSS3vjjkapEsjUeMsWJiWpi9k7Un6y3x9I/Jm3R3ZyTeCyUtH71N7pcoyg5rXmesaJQB8Erq/XI0EqpiWUNUVBWs0bBEG+GuUqx3CI2R+QNHrlT4U5wGt6uIvIFEFJueYhs5SeDvv/HdEV3yUOuOQ59ntCuCtsoHN4ICwE1f85KqHJOwFfpbc5OJSJJ0J/93rQBdQMPzhy1XrLWQidIAyPg7v2Qvy8GNsjZ8iqBpBAMX7tP6F32GoezNI/1xtPOKiRcoAt9eJi42st3vs1AT28TI3ovu8WepRu6eB48Vt0OK/1zM/x6rLgaxNPc28Xla2oz9Kmh6r9PPSN386O0dUXRKvWIRMxiL6i4pR2ITQLa4FdzntLc7VtPkW9BCxbiiapXyIoYSaJZEH6mQ9N6gy9R6vXURvTDHyxqQF9IeUdnfujXLguWaU7FjlpwvPT8pxZPEj/kXsNlv+fKC9lnrDHu/9vw0wwNb0xpM7nAekplQ97APx19UbQMRtMjWwKsBE9uRq7NHr+NY199WqMf/d7DQYntzuu3kYlxmUn1o=

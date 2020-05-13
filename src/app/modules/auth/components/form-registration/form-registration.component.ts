@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {IUser} from '../../../../shared/interfaces/user';
 import {AuthService} from '../../../../core/services/auth/auth.service';
+import {IUser} from '../../../../shared/interfaces/user';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-form-login',
-  templateUrl: './form-login.component.html',
-  styleUrls: ['./form-login.component.scss']
+  selector: 'app-form-registration',
+  templateUrl: './form-registration.component.html',
+  styleUrls: ['./form-registration.component.scss']
 })
-export class FormLoginComponent implements OnInit {
-  public formLogin: FormGroup;
+export class FormRegistrationComponent implements OnInit {
+  public formRegistration: FormGroup;
   public errorMessage = '';
 
   constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) {
@@ -22,7 +22,14 @@ export class FormLoginComponent implements OnInit {
 
   private createForm(): void {
     const emailRegex = '^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$';
-    this.formLogin = this.formBuilder.group({
+    this.formRegistration = this.formBuilder.group({
+      name: ['',
+        [
+          Validators.required,
+          Validators.minLength(1),
+          Validators.maxLength(50)
+        ]
+      ],
       email: ['',
         [
           Validators.required,
@@ -42,16 +49,15 @@ export class FormLoginComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    const user: Pick<IUser, 'email' | 'password'> = {
-      email: this.formLogin.value.email,
-      password: this.formLogin.value.password
+    const user: Omit<IUser, 'tasks' | 'assignedTasks'> = {
+      name: this.formRegistration.value.name,
+      email: this.formRegistration.value.email,
+      password: this.formRegistration.value.password
     };
-    this.authService.login(user).subscribe(response => {
-      this.router.navigate(['/home']);
+    this.authService.registrate(user).subscribe(response => {
+      this.router.navigate(['/login']);
     }, response => {
       this.errorMessage = response.error.message;
     });
   }
-
-
 }

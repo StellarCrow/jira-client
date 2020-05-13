@@ -20,7 +20,19 @@ export class AuthService {
         localStorage.setItem('jwt', response.token);
       }),
       map(response => {
-          return response.user;
+        return response.user;
+      }),
+      catchError(error => {
+        return throwError(error);
+      })
+    );
+  }
+
+  public registrate(user: Omit<IUser, 'tasks' | 'assignedTasks'>): Observable<IUser | never> {
+    const url = apiUrl + '/register';
+    return this.httpClient.post<{ user: IUser }>(url, user).pipe(
+      map(response => {
+        return response.user;
       }),
       catchError(error => {
         return throwError(error);

@@ -1,1 +1,20 @@
-<p>form-login works!</p>
+<form [formGroup]="formLogin" class="form" (submit)="onSubmit()" >
+  <mat-form-field appearance="outline">
+    <mat-label>Outline form field</mat-label>
+    <input matInput type="email" formControlName="email" placeholder="Placeholder">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Outline form field</mat-label>
+    <input matInput type="password" formControlName="password" placeholder="Placeholder">
+  </mat-form-field>
+  {{errorMessage}}
+  <button
+    class="form__button button"
+    mat-raised-button
+    color="primary"
+    type="submit"
+    [disabled]="!formLogin.valid"
+  >
+    Login
+  </button>
+</form>

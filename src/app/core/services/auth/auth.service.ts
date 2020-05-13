@@ -1,7 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {apiUrl} from '../../../../environments/environment';
-import {Observable} from 'rxjs';
+import {Observable, throwError} from 'rxjs';
+import {IUser} from '../../../shared/interfaces/user';
+import {catchError, map, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -9,5 +11,20 @@ import {Observable} from 'rxjs';
 export class AuthService {
 
   constructor(private httpClient: HttpClient) {
+  }
+
+  public login(user: Pick<IUser, 'email' | 'password'>): Observable<IUser | never> {
+    const url = apiUrl + '/login';
+    return this.httpClient.post<{ token: string, user: IUser }>(url, user).pipe(
+      tap((response) => {
+        localStorage.setItem('jwt', response.token);
+      }),
+      map(response => {
+          return response.user;
+      }),
+      catchError(error => {
+        return throwError(error);
+      })
+    );
   }
 }

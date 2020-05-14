@@ -1,0 +1,16 @@
+@import "setup/variables";
+
+.home {
+  display: flex;
+  min-height: 100vh;
+  background: $primary-color;
+
+  &__content {
+    margin: auto;
+    max-width: 60%;
+    padding: 3% 4%;
+    box-shadow: 0 0 5px $gray;
+    background: $text-color--light;
+    border-radius: 0.5em;
+  }
+}

@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/pages/home/home.component';
 import { FormLoginComponent } from './components/form-login/form-login.component';
 import { FormRegistrationComponent } from './components/form-registration/form-registration.component';
+import { IntroComponent } from './components/intro/intro.component';
 
 
 const routes: Routes = [
@@ -10,7 +11,8 @@ const routes: Routes = [
     path: '',
     component: HomeComponent,
     children: [
-      { path: 'login', component: FormLoginComponent, pathMatch: 'full' },
+      { path: '', component: IntroComponent, pathMatch: 'full' },
+      { path: 'login', component: FormLoginComponent },
       { path: 'registration', component: FormRegistrationComponent }
     ]
   }

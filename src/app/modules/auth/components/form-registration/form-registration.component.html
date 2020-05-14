@@ -1,17 +1,25 @@
+<div class="heading">
+  <h2 class="title">Registration</h2>
+</div>
 <form [formGroup]="formRegistration" class="form" (submit)="onSubmit()">
-  <mat-form-field appearance="outline">
+  <mat-form-field class="form__form-field" appearance="outline">
     <mat-label>Name</mat-label>
-    <input matInput formControlName="name" placeholder="Jiraldina">
+    <input class="form__input" matInput formControlName="name" placeholder="Jiraldina">
+    <mat-error *ngIf="formRegistration.get('name').invalid">Required field</mat-error>
   </mat-form-field>
-  <mat-form-field appearance="outline">
+  <mat-form-field class="form__form-field" appearance="outline">
     <mat-label>Email</mat-label>
-    <input matInput type="email" formControlName="email" placeholder="jirameil@jirka.com">
+    <input class="form__input" matInput type="email" formControlName="email" placeholder="jirameil@jirka.com">
+    <mat-error *ngIf="formRegistration.get('email').invalid">Enter correct email</mat-error>
   </mat-form-field>
-  <mat-form-field appearance="outline">
+  <mat-form-field class="form__form-field" appearance="outline">
     <mat-label>Password</mat-label>
-    <input matInput type="password" formControlName="password" placeholder="**********">
+    <input class="form__input" matInput type="password" formControlName="password" placeholder="**********">
+    <mat-error *ngIf="formRegistration.get('password').invalid">Required field</mat-error>
   </mat-form-field>
-  {{errorMessage}}
+  <div class="form__error">
+    {{errorMessage}}
+  </div>
   <button
     class="form__button button"
     mat-raised-button

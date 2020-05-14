@@ -1,13 +1,16 @@
 <mat-toolbar color="primary" role="heading" class="toolbar">
   <div class="toolbar__item">
-    <button class="header__button" mat-icon-button (click)="toggleSidenav()" matTooltip="Show filters" color="accent">
-      <mat-icon class="header__icon">menu</mat-icon>
+    <button class="toolbar__button" mat-icon-button (click)="toggleSidenav()" matTooltip="Show filters" color="accent">
+      <mat-icon class="toolbar__icon">menu</mat-icon>
     </button>
   </div>
-  <div class="toolbar__item">Jirastan</div>
+  <div class="toolbar__item">Tajirastan</div>
   <div class="toolbar__item toolbar__item--right">
-    <button class="header__button" mat-icon-button (click)="logout()" matTooltip="Logout" color="accent">
-      <mat-icon class="header__icon">exit_to_app</mat-icon>
-    </button>
+    <div class="toolbar__group">
+      <div class="toolbar__profile">Username</div>
+      <button class="toolbar__button" mat-icon-button (click)="logout()" matTooltip="Logout" color="accent">
+        <mat-icon class="toolbar__icon">exit_to_app</mat-icon>
+      </button>
+    </div>
   </div>
 </mat-toolbar>

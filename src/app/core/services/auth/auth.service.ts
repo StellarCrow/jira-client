@@ -1,9 +1,9 @@
-import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {apiUrl} from '../../../../environments/environment';
-import {Observable, throwError} from 'rxjs';
-import {IUser} from '../../../shared/interfaces/user';
-import {catchError, map, tap} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { apiUrl } from '../../../../environments/environment';
+import { Observable, throwError } from 'rxjs';
+import { IUser } from '../../../shared/interfaces/user';
+import { catchError, map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -38,5 +38,13 @@ export class AuthService {
         return throwError(error);
       })
     );
+  }
+
+  public isLoggedIn(): boolean {
+    return !!localStorage.getItem('token');
+  }
+
+  public getToken(): string {
+    return localStorage.getItem('token');
   }
 }

@@ -17,7 +17,7 @@ export class AuthService {
     const url = apiUrl + '/login';
     return this.httpClient.post<{ token: string, user: IUser }>(url, user).pipe(
       tap((response) => {
-        localStorage.setItem('jwt', response.token);
+        localStorage.setItem('token', response.token);
       }),
       map(response => {
         return response.user;

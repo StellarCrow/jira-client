@@ -1,0 +1,27 @@
+@import "setup/variables";
+
+.intro {
+  &__heading {
+    text-align: center;
+    font-family: $ff-header;
+  }
+
+  &__image-wrapper {
+    margin-bottom: 1em;
+  }
+
+  &__image {
+    max-width: 40%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  &__group {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button:first-child {
+    margin-right: 1em;
+  }
+}

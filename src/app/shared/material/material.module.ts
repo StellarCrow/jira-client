@@ -11,6 +11,8 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatBadgeModule } from '@angular/material/badge';
 
 const components = [
   MatCheckboxModule,
@@ -24,7 +26,9 @@ const components = [
   MatRadioModule,
   MatSidenavModule,
   MatFormFieldModule,
-  MatToolbarModule
+  MatToolbarModule,
+  DragDropModule,
+  MatBadgeModule
 ];
 
 @NgModule({

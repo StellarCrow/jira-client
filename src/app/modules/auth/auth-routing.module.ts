@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './components/pages/home/home.component';
+import { HomeComponent } from './components/pages/home/home.component';
+import { FormLoginComponent } from './components/form-login/form-login.component';
+import { FormRegistrationComponent } from './components/form-registration/form-registration.component';
 
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent
+    component: HomeComponent,
+    children: [
+      { path: 'login', component: FormLoginComponent, pathMatch: 'full' },
+      { path: 'registration', component: FormRegistrationComponent }
+    ]
   }
 ];
 
@@ -14,4 +20,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AuthRoutingModule { }
+export class AuthRoutingModule {
+}

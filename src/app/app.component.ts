@@ -6,10 +6,6 @@ import {apiUrl} from '../environments/environment';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-  title = 'jira-client';
-
-  ngOnInit(): void {
-    console.log(apiUrl);
-  }
+export class AppComponent {
+  public title = 'jira-client';
 }

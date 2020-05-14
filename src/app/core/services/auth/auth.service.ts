@@ -40,6 +40,10 @@ export class AuthService {
     );
   }
 
+  public logout(): void {
+    localStorage.removeItem('token');
+  }
+
   public isLoggedIn(): boolean {
     return !!localStorage.getItem('token');
   }

@@ -1,0 +1,12 @@
+@import "setup/variables";
+
+.header {
+  //position: fixed;
+  //height: $header-height;
+}
+
+.sidenav {
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding-top: $header-height;
+}

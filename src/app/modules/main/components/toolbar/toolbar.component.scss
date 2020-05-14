@@ -1,0 +1,14 @@
+.toolbar {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    margin-right: 2em;
+
+    &--right {
+      margin-left: auto;
+    }
+  }
+
+
+}

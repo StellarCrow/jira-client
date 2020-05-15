@@ -11,10 +11,11 @@ import { ModalComponent } from './components/modal/modal.component';
 import { AddTaskModalComponent } from './components/add-task-modal/add-task-modal.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormSelectComponent } from './components/form-select/form-select.component';
+import { FormDatepickerComponent } from './components/form-datepicker/form-datepicker.component';
 
 
 @NgModule({
-  declarations: [MainPageComponent, ToolbarComponent, BoardComponent, TaskFormComponent, ModalComponent, AddTaskModalComponent, FormSelectComponent],
+  declarations: [MainPageComponent, ToolbarComponent, BoardComponent, TaskFormComponent, ModalComponent, AddTaskModalComponent, FormSelectComponent, FormDatepickerComponent],
   imports: [
     CommonModule,
     MainRoutingModule,

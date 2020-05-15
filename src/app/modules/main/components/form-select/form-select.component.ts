@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { ISelectOption } from '../../../../shared/interfaces/select-option';
 import { MatSelectChange } from '@angular/material/select';
 
@@ -12,7 +12,7 @@ export class FormSelectComponent implements OnInit {
   public selected: ISelectOption;
 
   @Input() parentForm: FormGroup;
-  @Input() controlName: string;
+  @Input() controlName: FormControl;
   @Input() label: string;
   @Input() selectionList: ISelectOption[];
 

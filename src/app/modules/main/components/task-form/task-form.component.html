@@ -1,11 +1,49 @@
 <form [formGroup]="taskForm" class="form" (submit)="onSubmit()">
+  <mat-form-field appearance="standard" class="form__field">
+    <mat-label>Summary</mat-label>
+    <input matInput placeholder="Create new country...">
+    <mat-icon matSuffix>edit</mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
   <div class="form__group">
-    <app-form-select
-      [controlName]="'type'"
-      [selectionList]="taskTypes"
-      [parentForm]="taskForm"
-      [label]="'Issue Type'"
+    <app-form-select class="form__field"
+                     [controlName]="'type'"
+                     [selectionList]="taskTypes"
+                     [parentForm]="taskForm"
+                     [label]="'Issue Type'"
+    >
+    </app-form-select>
+    <app-form-select class="form__field"
+                     [controlName]="'assignee'"
+                     [selectionList]="taskTypes"
+                     [parentForm]="taskForm"
+                     [label]="'Assignee'"
     >
     </app-form-select>
   </div>
+  <div class="form__group">
+    <app-form-select class="form__field"
+                     [controlName]="'priority'"
+                     [selectionList]="taskPriorities"
+                     [parentForm]="taskForm"
+                     [label]="'Priority'"
+    >
+    </app-form-select>
+    <app-form-datepicker class="form__field"
+                         [parentForm]="taskForm"
+                         [controlName]="'deadline'"
+                         [label]="'Due Date'"
+                         [datepickerName]="'deadline'"
+    ></app-form-datepicker>
+  </div>
+  <mat-form-field class="form__field" [formGroup]="taskForm" appearance="fill">
+    <mat-label class="form-field__label">Description</mat-label>
+    <textarea
+      matInput
+      formControlName="description"
+      placeholder="Description..."
+      class="form-field__textarea"
+    ></textarea>
+    <mat-error></mat-error>
+  </mat-form-field>
 </form>

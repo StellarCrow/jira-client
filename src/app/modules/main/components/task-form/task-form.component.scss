@@ -1,0 +1,19 @@
+@import "setup/variables";
+
+.form {
+  padding: 3% 0;
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+
+    & > .form__field {
+      flex: 0 1 45%
+    }
+  }
+
+  &__field {
+    width: 100%;
+  }
+}

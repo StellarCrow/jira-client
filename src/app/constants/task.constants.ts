@@ -30,28 +30,28 @@ export const taskPriorityList =
   [
     {
       name: 'Blocker',
-      icon: '',
-      color: '',
+      icon: 'block',
+      color: '#ff3245',
     },
     {
       name: 'Critical',
-      icon: '',
-      color: '',
+      icon: 'warning',
+      color: '#ff3245',
     },
     {
       name: 'Major',
-      icon: '',
-      color: '',
+      icon: 'expand_less',
+      color: '#ff3245',
     },
     {
       name: 'Minor',
-      icon: '',
-      color: '',
+      icon: 'expand_more',
+      color: '#67ff8b',
     },
     {
       name: 'Trivial',
-      icon: '',
-      color: '',
+      icon: '#67ff8b',
+      color: 'arrow_downward',
     },
   ];
 

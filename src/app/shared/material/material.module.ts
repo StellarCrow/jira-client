@@ -14,6 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDividerModule } from '@angular/material/divider';
 
 const components = [
   MatCheckboxModule,
@@ -30,7 +31,8 @@ const components = [
   MatToolbarModule,
   DragDropModule,
   MatBadgeModule,
-  MatSelectModule
+  MatSelectModule,
+  MatDividerModule
 ];
 
 @NgModule({

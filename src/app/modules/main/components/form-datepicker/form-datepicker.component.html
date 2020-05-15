@@ -1,0 +1,14 @@
+<mat-form-field class="datepicker" [formGroup]="parentForm">
+  <mat-label>{{label}}</mat-label>
+  <input
+    matInput
+    [formControlName]="controlName"
+    [matDatepicker]="datepickerName"
+    [matDatepickerFilter]="filterDate"
+  />
+  <mat-datepicker-toggle
+    matSuffix
+    [for]="datepickerName"
+  ></mat-datepicker-toggle>
+  <mat-datepicker #datepickerName></mat-datepicker>
+</mat-form-field>

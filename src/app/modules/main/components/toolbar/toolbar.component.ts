@@ -25,7 +25,7 @@ export class ToolbarComponent {
   }
 
   public openDialog(): void {
-    const dialogRef = this.dialog.open(AddTaskModalComponent, { minWidth: '80%' });
+    const dialogRef = this.dialog.open(AddTaskModalComponent, { minWidth: '60%' });
     dialogRef.afterClosed().subscribe((result) => {
       console.log('The dialog was closed');
     });

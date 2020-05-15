@@ -1,4 +1,4 @@
-<div class="modal">
+<mat-dialog-content class="modal">
   <div class="modal__header">
     <ng-content select=".modal-title"></ng-content>
     <div class="modal__close" [mat-dialog-close]="'closed'">
@@ -7,8 +7,10 @@
       </button>
     </div>
   </div>
+  <mat-divider></mat-divider>
   <div class="modal__body">
     <ng-content select=".modal-body"></ng-content>
   </div>
+  <mat-divider></mat-divider>
   <div class="modal__footer">Footer</div>
-</div>
+</mat-dialog-content>

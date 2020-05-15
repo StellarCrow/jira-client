@@ -50,8 +50,8 @@ export const taskPriorityList =
     },
     {
       name: 'Trivial',
-      icon: '#67ff8b',
-      color: 'arrow_downward',
+      icon: 'arrow_downward',
+      color: '#67ff8b',
     },
   ];
 

@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { taskPriorityList, taskResolutionList, taskStatusList, taskTypeList } from '../../../../constants/task.constants';
+import { taskPriorityList, taskTypeList } from '../../../../constants/task.constants';
 import { ISelectOption } from '../../../../shared/interfaces/select-option';
+import { ITask } from '../../../../shared/interfaces/task';
 
 @Component({
   selector: 'app-task-form',
@@ -11,9 +12,9 @@ import { ISelectOption } from '../../../../shared/interfaces/select-option';
 export class TaskFormComponent implements OnInit {
   public taskForm: FormGroup;
   public taskTypes: ISelectOption[] = taskTypeList;
-  public taskStatuses: ISelectOption[] = taskStatusList;
   public taskPriorities: ISelectOption[] = taskPriorityList;
-  public taskResolutions: ISelectOption[] = taskResolutionList;
+
+  @Output() task = new EventEmitter<ITask>();
 
   constructor(private formBuilder: FormBuilder) {
   }
@@ -34,7 +35,7 @@ export class TaskFormComponent implements OnInit {
   }
 
   public onSubmit(): void {
-
+    this.task.emit(this.taskForm.value);
   }
 
 }

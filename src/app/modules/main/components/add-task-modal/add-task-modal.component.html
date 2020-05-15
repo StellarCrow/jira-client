@@ -1,6 +1,6 @@
 <app-modal>
   <div class="modal-title">Create issue</div>
   <div class="modal-body">
-    <app-task-form></app-task-form>
+    <app-task-form (task)="onSubmit($event)"></app-task-form>
   </div>
 </app-modal>

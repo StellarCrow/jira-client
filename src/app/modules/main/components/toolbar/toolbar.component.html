@@ -7,6 +7,9 @@
   <div class="toolbar__item">Tajirastan</div>
   <div class="toolbar__item toolbar__item--right">
     <div class="toolbar__group">
+      <button mat-flat-button class="toolbar__button" (click)="openDialog()">
+        Create issue
+      </button>
       <div class="toolbar__profile">Username</div>
       <button class="toolbar__button" mat-icon-button (click)="logout()" matTooltip="Logout" color="accent">
         <mat-icon class="toolbar__icon">exit_to_app</mat-icon>

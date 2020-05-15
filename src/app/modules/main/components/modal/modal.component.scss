@@ -1,0 +1,16 @@
+@import "setup/variables";
+.modal {
+  width: 100%;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+    border-bottom: 1px solid $gray;
+  }
+
+  &__title {
+    color: red;
+  }
+}

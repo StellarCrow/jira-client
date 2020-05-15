@@ -1,1 +1,11 @@
-<p>task-form works!</p>
+<form [formGroup]="taskForm" class="form" (submit)="onSubmit()">
+  <div class="form__group">
+    <app-form-select
+      [controlName]="'type'"
+      [selectionList]="taskTypes"
+      [parentForm]="taskForm"
+      [label]="'Issue Type'"
+    >
+    </app-form-select>
+  </div>
+</form>

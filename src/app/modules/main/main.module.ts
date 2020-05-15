@@ -9,14 +9,17 @@ import { BoardComponent } from './components/board/board.component';
 import { TaskFormComponent } from './components/task-form/task-form.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { AddTaskModalComponent } from './components/add-task-modal/add-task-modal.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormSelectComponent } from './components/form-select/form-select.component';
 
 
 @NgModule({
-  declarations: [MainPageComponent, ToolbarComponent, BoardComponent, TaskFormComponent, ModalComponent, AddTaskModalComponent],
+  declarations: [MainPageComponent, ToolbarComponent, BoardComponent, TaskFormComponent, ModalComponent, AddTaskModalComponent, FormSelectComponent],
   imports: [
     CommonModule,
     MainRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule
   ]
 })
 export class MainModule { }

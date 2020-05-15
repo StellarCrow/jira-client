@@ -13,6 +13,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatSelectModule } from '@angular/material/select';
 
 const components = [
   MatCheckboxModule,
@@ -28,7 +29,8 @@ const components = [
   MatFormFieldModule,
   MatToolbarModule,
   DragDropModule,
-  MatBadgeModule
+  MatBadgeModule,
+  MatSelectModule
 ];
 
 @NgModule({

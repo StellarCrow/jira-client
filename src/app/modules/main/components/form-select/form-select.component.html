@@ -1,0 +1,14 @@
+<mat-form-field [formGroup]="parentForm" class="select">
+  <mat-label>{{label}}</mat-label>
+  <mat-select [formControlName]="controlName" (selectionChange)="onChange($event)">
+    <mat-select-trigger>
+      <mat-icon matSuffix [ngStyle]="{'color': selected.color}">{{selected.icon}}</mat-icon>
+      {{selected.name}}
+    </mat-select-trigger>
+    <mat-option *ngFor="let option of selectionList" [value]="option.name" >
+      <mat-icon matSuffix [ngStyle]="{'color': option.color}">{{option.icon}}</mat-icon>
+      {{option.name}}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="parentForm.get(controlName).hasError('required')">Required field</mat-error>
+</mat-form-field>

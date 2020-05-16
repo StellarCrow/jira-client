@@ -1,9 +1,8 @@
 <form [formGroup]="taskForm" class="form" (submit)="onSubmit()">
-  <mat-form-field appearance="standard" class="form__field">
+  <mat-form-field appearance="standard" class="form__title">
     <mat-label>Summary</mat-label>
-    <input matInput formControlName="title" placeholder="Create new country...">
+    <input matInput formControlName="summary" placeholder="Create new country...">
     <mat-icon matSuffix>edit</mat-icon>
-    <mat-hint>Hint</mat-hint>
   </mat-form-field>
   <div class="form__group">
     <app-form-select class="form__field"
@@ -15,7 +14,7 @@
     </app-form-select>
     <app-form-select class="form__field"
                      [controlName]="'assignee'"
-                     [selectionList]="taskTypes"
+                     [selectionList]="assigneeList"
                      [parentForm]="taskForm"
                      [label]="'Assignee'"
     >

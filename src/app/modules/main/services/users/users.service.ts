@@ -1,0 +1,32 @@
+import { Injectable } from '@angular/core';
+import { Observable, throwError } from 'rxjs';
+import { IUser } from '../../../../shared/interfaces/user';
+import { HttpClient } from '@angular/common/http';
+import { apiUrl } from '../../../../../environments/environment';
+import { catchError, map } from 'rxjs/operators';
+import { ISelectOption } from '../../../../shared/interfaces/select-option';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class UsersService {
+
+  constructor(private httpClient: HttpClient) {
+  }
+
+  public getUsersOptionList(): Observable<ISelectOption[] | never> {
+    const url = apiUrl + '/users';
+    const icon = 'face';
+    const color = '#000000';
+    return this.httpClient.get<IUser[]>(url).pipe(
+      map(users => {
+        return users.map(user => {
+          return { name: user.name, value: user._id, icon, color };
+        });
+      }),
+      catchError(error => {
+        return throwError(error);
+      })
+    );
+  }
+}

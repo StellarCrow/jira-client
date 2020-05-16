@@ -1,28 +1,33 @@
 export const taskTypeList = [
   {
     name: 'Epic',
+    value: 'Epic',
     icon: 'flash_on',
-    color: '#a9f8ff',
+    color: '#3cd8e6',
   },
   {
     name: 'User Story',
+    value: 'User Story',
     icon: 'bookmark',
-    color: '#ffeaa9',
+    color: '#e6b33c',
   },
   {
     name: 'Task',
     icon: 'check_box',
-    color: '#a9c4ff',
+    value: 'check_box',
+    color: '#3c3ce6',
   },
   {
     name: 'New Feature',
+    value: 'New Feature',
     icon: 'add_box',
-    color: '#b5ffa9',
+    color: '#3ce65e',
   },
   {
     name: 'Bug',
+    value: 'Bug',
     icon: 'bug_report',
-    color: '#ffa9a9',
+    color: '#e63c3c',
   },
 ];
 
@@ -30,26 +35,31 @@ export const taskPriorityList =
   [
     {
       name: 'Blocker',
+      value: 'Blocker',
       icon: 'block',
       color: '#ff3245',
     },
     {
       name: 'Critical',
+      value: 'Critical',
       icon: 'warning',
       color: '#ff3245',
     },
     {
       name: 'Major',
+      value: 'Major',
       icon: 'expand_less',
       color: '#ff3245',
     },
     {
       name: 'Minor',
+      value: 'Minor',
       icon: 'expand_more',
       color: '#67ff8b',
     },
     {
       name: 'Trivial',
+      value: 'Trivial',
       icon: 'arrow_downward',
       color: '#67ff8b',
     },

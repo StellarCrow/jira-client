@@ -21,6 +21,6 @@ export class FormSelectComponent implements OnInit {
   }
 
   public onChange(event: MatSelectChange): void {
-    this.selected = this.selectionList.find((opt) => opt.name === event.value);
+    this.selected = this.selectionList.find((opt) => opt.value === event.value);
   }
 }

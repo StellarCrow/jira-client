@@ -112,3 +112,8 @@ export const taskResolutionList =
       color: '',
     },
   ];
+
+export const unassignedIcon = 'sentiment_satisfied_alt';
+export const assigneeIconDefault = 'face';
+export const unassignedIconColor = '#676767';
+export const assigneeIconColorDefault = '#000000';

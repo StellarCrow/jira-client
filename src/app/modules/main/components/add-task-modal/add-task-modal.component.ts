@@ -13,7 +13,11 @@ export class AddTaskModalComponent {
   }
 
   public onSubmit(task: ITask): void {
-    this.taskService.createTask(task);
+    this.taskService.createTask(task).subscribe(res => {
+      console.log(res);
+    }, err => {
+      console.log(err);
+    });
   }
 
 }

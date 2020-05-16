@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { apiUrl } from '../../../../../environments/environment';
 import { catchError, map } from 'rxjs/operators';
 import { ISelectOption } from '../../../../shared/interfaces/select-option';
+import { assigneeIconColorDefault, assigneeIconDefault } from '../../../../constants/task.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -16,12 +17,10 @@ export class UsersService {
 
   public getUsersOptionList(): Observable<ISelectOption[] | never> {
     const url = apiUrl + '/users';
-    const icon = 'face';
-    const color = '#000000';
     return this.httpClient.get<IUser[]>(url).pipe(
       map(users => {
         return users.map(user => {
-          return { name: user.name, value: user._id, icon, color };
+          return { name: user.name, value: user._id, icon: assigneeIconDefault, color: assigneeIconColorDefault };
         });
       }),
       catchError(error => {

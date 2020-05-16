@@ -15,6 +15,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 const components = [
   MatCheckboxModule,
@@ -32,7 +33,8 @@ const components = [
   DragDropModule,
   MatBadgeModule,
   MatSelectModule,
-  MatDividerModule
+  MatDividerModule,
+  MatSnackBarModule,
 ];
 
 @NgModule({

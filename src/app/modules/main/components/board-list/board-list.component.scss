@@ -1,0 +1,15 @@
+@import "setup/variables";
+
+.board-list {
+  &__container {
+    flex: 0 1 20%;
+  }
+
+  &__header {
+    border-bottom: 1px solid $primary-color;
+  }
+
+  &__list {
+    min-height: 200px;
+  }
+}

@@ -12,6 +12,7 @@ import { AddTaskModalComponent } from './components/add-task-modal/add-task-moda
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormSelectComponent } from './components/form-select/form-select.component';
 import { FormDatepickerComponent } from './components/form-datepicker/form-datepicker.component';
+import { BoardListComponent } from './components/board-list/board-list.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { FormDatepickerComponent } from './components/form-datepicker/form-datep
     ModalComponent,
     AddTaskModalComponent,
     FormSelectComponent,
-    FormDatepickerComponent
+    FormDatepickerComponent,
+    BoardListComponent
   ],
   imports: [
     CommonModule,

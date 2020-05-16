@@ -1,31 +1,22 @@
-<div class="board">
-  <div class="board__container">
-    <h3 class="board__header" [matBadge]="todoData.length.toString()" matBadgeColor="accent" matBadgeOverlap="false">To Do</h3>
-    <div class="board__list" [cdkDropListData]="todoData" cdkDropList #todoList="cdkDropList"
-         [cdkDropListConnectedTo]="[progressList, testingList, doneList]" (cdkDropListDropped)="drop($event)">
-      <div class="board__item" *ngFor="let item of todoData" cdkDrag>{{item}}</div>
-    </div>
-  </div>
-  <div class="board__container">
-    <h3 class="board__header">In Progress</h3>
-    <div class="board__list" [cdkDropListData]="progressData" cdkDropList #progressList="cdkDropList"
-         [cdkDropListConnectedTo]="[todoList, testingList, doneList]" (cdkDropListDropped)="drop($event)">
-      <div class="board__item" *ngFor="let item of progressData" cdkDrag>{{item}}</div>
-    </div>
-  </div>
-  <div class="board__container">
-    <h3 class="board__header">In Testing</h3>
-    <div class="board__list" [cdkDropListData]="testingData" cdkDropList #testingList="cdkDropList"
-         [cdkDropListConnectedTo]="[progressList, todoList, doneList]" (cdkDropListDropped)="drop($event)">
-      <div class="board__item" *ngFor="let item of testingData" cdkDrag>{{item}}</div>
-    </div>
-  </div>
-  <div class="board__container">
-    <h3 class="board__header">Done</h3>
-    <div class="board__list" [cdkDropListData]="doneData" cdkDropList #doneList="cdkDropList"
-         [cdkDropListConnectedTo]="[progressList, testingList, todoList]" (cdkDropListDropped)="drop($event)">
-      <div class="board__item" *ngFor="let item of doneData" cdkDrag>{{item}}</div>
-    </div>
-  </div>
-
+<div class="board" cdkDropListGroup>
+  <app-board-list [data]="todoData"
+                  [listHeader]="'To Do'"
+                  [listId]="'todo'"
+                  [listName]="'todo'">
+  </app-board-list>
+  <app-board-list [data]="progressData"
+                  [listHeader]="'In Progress'"
+                  [listId]="'progress'"
+                  [listName]="'progress'">
+  </app-board-list>
+  <app-board-list [data]="testingData"
+                  [listHeader]="'In Testing'"
+                  [listId]="'testing'"
+                  [listName]="'testing'">
+  </app-board-list>
+  <app-board-list [data]="doneData"
+                  [listHeader]="'Done'"
+                  [listId]="'done'"
+                  [listName]="'done'">
+  </app-board-list>
 </div>

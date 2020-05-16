@@ -49,7 +49,7 @@ export class FormRegistrationComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    const user: Omit<IUser, 'tasks' | 'assignedTasks'> = {
+    const user: Omit<IUser, 'tasks' | 'assignedTasks' | '_id'> = {
       name: this.formRegistration.value.name,
       email: this.formRegistration.value.email,
       password: this.formRegistration.value.password

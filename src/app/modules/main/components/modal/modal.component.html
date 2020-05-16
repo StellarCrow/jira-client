@@ -1,0 +1,15 @@
+<mat-dialog-content class="modal">
+  <div class="modal__header">
+    <ng-content select=".modal-title"></ng-content>
+    <div class="modal__close" [mat-dialog-close]="'closed'">
+      <button class="modal__button" mat-icon-button>
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="modal__body">
+    <ng-content select=".modal-body"></ng-content>
+  </div>
+  <mat-divider></mat-divider>
+</mat-dialog-content>

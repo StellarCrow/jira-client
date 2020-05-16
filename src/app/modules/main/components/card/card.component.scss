@@ -1,0 +1,21 @@
+@import "setup/variables";
+
+.card {
+  border-left: 4px solid;
+
+  &__link {
+    color: $primary-color;
+  }
+
+  &__content {
+    color: $gray;
+  }
+
+  &__footer {
+    padding: 0 4%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row nowrap;
+  }
+}

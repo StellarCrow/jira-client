@@ -12,6 +12,7 @@ export class BoardListComponent {
   @Input() listHeader: string;
   @Input() listId: string;
   @Input() listName: string;
+  @Input() listColor: string;
 
   get count() {
     return this.data ? this.data.length.toString() : '0';

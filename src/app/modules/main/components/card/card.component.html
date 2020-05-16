@@ -1,0 +1,18 @@
+<mat-card class="card" [ngStyle]="{'border-color': cardColor}">
+  <mat-card-title class="card__title">
+    <a class="card__link" [routerLink]="'/task/' + task._id">{{task.title}}</a>
+  </mat-card-title>
+  <mat-card-content class="card__content">
+    <p>{{task.summary}}</p>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-footer class="card__footer">
+    <div class="card__icons">
+      <mat-icon [ngStyle]="{'color': taskType.color}">{{taskType.icon}}</mat-icon>
+      <mat-icon [ngStyle]="{'color': taskPriority.color}">{{taskPriority.icon}}</mat-icon>
+    </div>
+    <div class="card__assignee">
+      {{ task.assignee && task.assignee.name}}
+    </div>
+  </mat-card-footer>
+</mat-card>

@@ -16,7 +16,7 @@
          *ngFor="let item of data"
          cdkDrag
     >
-      {{item}}
+      <app-card [task]="item" [cardColor]="listColor"></app-card>
     </div>
   </div>
 </div>

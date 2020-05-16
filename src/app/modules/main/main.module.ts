@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormSelectComponent } from './components/form-select/form-select.component';
 import { FormDatepickerComponent } from './components/form-datepicker/form-datepicker.component';
 import { BoardListComponent } from './components/board-list/board-list.component';
+import { CardComponent } from './components/card/card.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { BoardListComponent } from './components/board-list/board-list.component
     AddTaskModalComponent,
     FormSelectComponent,
     FormDatepickerComponent,
-    BoardListComponent
+    BoardListComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,

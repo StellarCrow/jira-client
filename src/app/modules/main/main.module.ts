@@ -15,7 +15,16 @@ import { FormDatepickerComponent } from './components/form-datepicker/form-datep
 
 
 @NgModule({
-  declarations: [MainPageComponent, ToolbarComponent, BoardComponent, TaskFormComponent, ModalComponent, AddTaskModalComponent, FormSelectComponent, FormDatepickerComponent],
+  declarations: [
+    MainPageComponent,
+    ToolbarComponent,
+    BoardComponent,
+    TaskFormComponent,
+    ModalComponent,
+    AddTaskModalComponent,
+    FormSelectComponent,
+    FormDatepickerComponent
+  ],
   imports: [
     CommonModule,
     MainRoutingModule,
@@ -23,4 +32,5 @@ import { FormDatepickerComponent } from './components/form-datepicker/form-datep
     ReactiveFormsModule
   ]
 })
-export class MainModule { }
+export class MainModule {
+}

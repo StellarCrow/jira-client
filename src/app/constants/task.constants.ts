@@ -14,7 +14,7 @@ export const taskTypeList = [
   {
     name: 'Task',
     icon: 'check_box',
-    value: 'check_box',
+    value: 'Task',
     color: '#3c3ce6',
   },
   {

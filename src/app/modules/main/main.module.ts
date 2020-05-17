@@ -14,6 +14,7 @@ import { FormSelectComponent } from './components/form-select/form-select.compon
 import { FormDatepickerComponent } from './components/form-datepicker/form-datepicker.component';
 import { BoardListComponent } from './components/board-list/board-list.component';
 import { CardComponent } from './components/card/card.component';
+import { TaskPageComponent } from './components/pages/task-page/task-page.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { CardComponent } from './components/card/card.component';
     FormSelectComponent,
     FormDatepickerComponent,
     BoardListComponent,
-    CardComponent
+    CardComponent,
+    TaskPageComponent
   ],
   imports: [
     CommonModule,

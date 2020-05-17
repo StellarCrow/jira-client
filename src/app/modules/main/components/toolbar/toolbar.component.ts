@@ -12,7 +12,10 @@ import { AddTaskModalComponent } from '../add-task-modal/add-task-modal.componen
 })
 export class ToolbarComponent {
 
-  constructor(public dialog: MatDialog, private sidenavService: SidenavService, private authService: AuthService, private router: Router) {
+  constructor(public dialog: MatDialog,
+              private sidenavService: SidenavService,
+              private authService: AuthService,
+              private router: Router) {
   }
 
   public toggleSidenav(): void {

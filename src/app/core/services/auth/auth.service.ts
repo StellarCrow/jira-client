@@ -28,7 +28,7 @@ export class AuthService {
     );
   }
 
-  public registrate(user: Omit<IUser, 'tasks' | 'assignedTasks'>): Observable<IUser | never> {
+  public registrate(user: Omit<IUser, 'tasks' | 'assignedTasks' | '_id'>): Observable<IUser | never> {
     const url = apiUrl + '/register';
     return this.httpClient.post<{ user: IUser }>(url, user).pipe(
       map(response => {

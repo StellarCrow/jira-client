@@ -1,0 +1,13 @@
+@import "setup/variables";
+
+.board {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 90%;
+  padding: 3% 4%;
+
+  &__list {
+    flex: 0 1 20%;
+  }
+}

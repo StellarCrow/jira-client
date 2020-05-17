@@ -1,0 +1,22 @@
+<div class="board-list">
+  <h3 class="board-list__header"
+      [matBadge]="count"
+      matBadgeColor="accent"
+      matBadgeOverlap="false"
+  >
+    {{listHeader}}
+  </h3>
+  <div class="board-list__list"
+       [cdkDropListData]="data"
+       [id]="listId" cdkDropList
+       #listName="cdkDropList"
+       (cdkDropListDropped)="drop($event)"
+  >
+    <div class="board-list__item"
+         *ngFor="let item of data"
+         cdkDrag
+    >
+      <app-card [task]="item" [cardColor]="listColor"></app-card>
+    </div>
+  </div>
+</div>

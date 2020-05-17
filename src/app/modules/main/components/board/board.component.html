@@ -1,0 +1,34 @@
+<div class="board" cdkDropListGroup>
+  <app-board-list class="board__list"
+                  [data]="todoData"
+                  [listHeader]="'To Do'"
+                  [listId]="'todo'"
+                  [listName]="'todo'"
+                  [listColor]="'#3258ff'"
+  >
+  </app-board-list>
+  <app-board-list class="board__list"
+                  [data]="progressData"
+                  [listHeader]="'In Progress'"
+                  [listId]="'progress'"
+                  [listName]="'progress'"
+                  [listColor]="'#ffd332'"
+  >
+  </app-board-list>
+  <app-board-list class="board__list"
+                  [data]="testingData"
+                  [listHeader]="'In Testing'"
+                  [listId]="'testing'"
+                  [listName]="'testing'"
+                  [listColor]="'#8928d4'"
+  >
+  </app-board-list>
+  <app-board-list class="board__list"
+                  [data]="doneData"
+                  [listHeader]="'Done'"
+                  [listId]="'done'"
+                  [listName]="'done'"
+                  [listColor]="'#1bb55e'"
+  >
+  </app-board-list>
+</div>

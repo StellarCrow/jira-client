@@ -9,6 +9,10 @@
     align-items: center;
   }
 
+  &__button:first-child {
+    margin-right: 1em;
+  }
+
   &__item {
     margin-right: 2em;
 

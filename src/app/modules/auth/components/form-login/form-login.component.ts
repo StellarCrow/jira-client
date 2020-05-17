@@ -47,7 +47,7 @@ export class FormLoginComponent implements OnInit {
       password: this.formLogin.value.password
     };
     this.authService.login(user).subscribe(response => {
-      this.router.navigate(['/main']);
+      this.router.navigate(['/board']);
     }, response => {
       this.errorMessage = response.error.message;
     });

@@ -65,29 +65,12 @@ export const taskPriorityList =
     },
   ];
 
-export const taskStatusList =
-  [
-    {
-      name: 'To Do',
-      icon: '',
-      color: '',
-    },
-    {
-      name: 'In Progress',
-      icon: '',
-      color: '',
-    },
-    {
-      name: 'In Testing',
-      icon: '',
-      color: '',
-    },
-    {
-      name: 'Done',
-      icon: '',
-      color: '',
-    },
-  ];
+export const taskStatusList = {
+  TODO: 'To Do',
+  PROGRESS: 'In Progress',
+  TESTING: 'In Testing',
+  DONE: 'Done',
+};
 
 export const taskResolutionList =
   [

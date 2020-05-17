@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { ITask } from '../../../../shared/interfaces/task';
 import { TaskService } from '../../services/task/task.service';
 
@@ -10,16 +9,19 @@ import { TaskService } from '../../services/task/task.service';
 })
 export class BoardComponent implements OnInit {
   public todoData: ITask[];
-  public progressData: ITask[] = [];
-  public testingData: ITask[] = [];
-  public doneData: ITask[] = [];
+  public progressData: ITask[];
+  public testingData: ITask[];
+  public doneData: ITask[];
 
   constructor(private taskService: TaskService) {
   }
 
   ngOnInit(): void {
     this.taskService.getAllTasks().subscribe(res => {
-      this.todoData = res;
+      this.todoData = res.todo || [];
+      this.progressData = res.progress || [];
+      this.testingData = res.testing || [];
+      this.doneData = res.done || [];
     });
   }
 

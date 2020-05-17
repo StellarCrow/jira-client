@@ -1,25 +1,28 @@
 import { Component, OnInit } from '@angular/core';
-import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { ITask } from '../../../../shared/interfaces/task';
+import { TaskService } from '../../services/task/task.service';
 
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss']
 })
-export class BoardComponent {
-  public todoData = ['Hello', 'bla', 'yay'];
-  public progressData = ['Hello', 'bla', 'yay'];
-  public testingData = ['Hello', 'bla', 'yay'];
-  public doneData = ['Hello', 'bla', 'yay'];
+export class BoardComponent implements OnInit {
+  public todoData: ITask[];
+  public progressData: ITask[];
+  public testingData: ITask[];
+  public doneData: ITask[];
 
-  public drop(event: CdkDragDrop<string[]>): void {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data,
-        event.container.data,
-        event.previousIndex,
-        event.currentIndex);
-    }
+  constructor(private taskService: TaskService) {
   }
+
+  ngOnInit(): void {
+    this.taskService.tasks$.subscribe((res) => {
+      this.todoData = res.todo || [];
+      this.progressData = res.progress || [];
+      this.testingData = res.testing || [];
+      this.doneData = res.done || [];
+    });
+  }
+
 }

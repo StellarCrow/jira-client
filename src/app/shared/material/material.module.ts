@@ -16,6 +16,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatCardModule } from '@angular/material/card';
 
 const components = [
   MatCheckboxModule,
@@ -35,6 +36,7 @@ const components = [
   MatSelectModule,
   MatDividerModule,
   MatSnackBarModule,
+  MatCardModule
 ];
 
 @NgModule({

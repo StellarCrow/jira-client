@@ -1,5 +1,5 @@
 <header class="header">
-  <app-toolbar></app-toolbar>
+  <app-toolbar [username]="username"></app-toolbar>
 </header>
 <main class="main">
   <mat-sidenav-container class="main__sidenav sidenav">
@@ -8,7 +8,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="sidenav__content">
-      <app-board></app-board>
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </main>

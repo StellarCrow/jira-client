@@ -15,6 +15,8 @@ import { FormDatepickerComponent } from './components/form-datepicker/form-datep
 import { BoardListComponent } from './components/board-list/board-list.component';
 import { CardComponent } from './components/card/card.component';
 import { TaskPageComponent } from './components/pages/task-page/task-page.component';
+import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
+import { IssueDetailsComponent } from './components/issue-details/issue-details.component';
 
 
 @NgModule({
@@ -29,7 +31,9 @@ import { TaskPageComponent } from './components/pages/task-page/task-page.compon
     FormDatepickerComponent,
     BoardListComponent,
     CardComponent,
-    TaskPageComponent
+    TaskPageComponent,
+    ExpansionPanelComponent,
+    IssueDetailsComponent
   ],
   imports: [
     CommonModule,

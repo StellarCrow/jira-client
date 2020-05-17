@@ -19,7 +19,7 @@ export class BoardListComponent {
   constructor(private issueService: IssueService) {
   }
 
-  get count() {
+  get count(): string {
     return this.data ? this.data.length.toString() : '0';
   }
 

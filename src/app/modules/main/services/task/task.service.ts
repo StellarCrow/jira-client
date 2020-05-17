@@ -11,13 +11,11 @@ import { IFilteredTasks } from '../../../../shared/interfaces/filtered-tasks';
   providedIn: 'root'
 })
 export class TaskService {
-  private defaultObject = { todo: [], progress: [], testing: [], done: [] };
-  private taskListObject: IFilteredTasks = this.defaultObject;
+  private taskListObject: IFilteredTasks;
   private taskSubject = new BehaviorSubject<IFilteredTasks>({ todo: [], progress: [], testing: [], done: [] });
-  public tasks$: Observable<IFilteredTasks>;
+  public tasks$: Observable<IFilteredTasks> = this.taskSubject.asObservable();
 
   constructor(private httpClient: HttpClient) {
-    this.tasks$ = this.taskSubject.asObservable();
     this.getAllTasks().subscribe();
   }
 

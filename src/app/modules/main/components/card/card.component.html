@@ -9,7 +9,7 @@
   <mat-card-footer class="card__footer">
     <div class="card__icons">
       <mat-icon [ngStyle]="{'color': taskType.color}">{{taskType.icon}}</mat-icon>
-      <mat-icon [ngStyle]="{'color': taskPriority.color}">{{taskPriority.icon}}</mat-icon>
+      <mat-icon [ngStyle]="{'color': taskPriority.color}">{{ taskPriority.icon}}</mat-icon>
     </div>
     <div class="card__assignee">
       {{ task.assignee && task.assignee.name}}

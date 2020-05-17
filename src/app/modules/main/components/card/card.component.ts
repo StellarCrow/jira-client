@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ITask } from '../../../../shared/interfaces/task';
 import { taskPriorityList, taskTypeList } from '../../../../constants/task.constants';
 import { ISelectOption } from '../../../../shared/interfaces/select-option';
@@ -15,8 +15,6 @@ export class CardComponent implements OnInit {
   @Input() task: ITask;
   @Input() cardColor: string;
 
-  constructor() {
-  }
 
   ngOnInit(): void {
     this.taskType = taskTypeList.find(type => this.task.type === type.value);

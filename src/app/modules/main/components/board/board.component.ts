@@ -17,7 +17,7 @@ export class BoardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.taskService.getAllTasks().subscribe(res => {
+    this.taskService.tasks$.subscribe((res) => {
       this.todoData = res.todo || [];
       this.progressData = res.progress || [];
       this.testingData = res.testing || [];

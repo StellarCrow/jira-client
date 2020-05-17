@@ -19,7 +19,6 @@ export class BoardListComponent {
   }
 
   public drop(event: CdkDragDrop<ITask[]>): void {
-    console.log(event);
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
     } else {

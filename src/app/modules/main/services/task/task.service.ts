@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { ITask } from '../../../../shared/interfaces/task';
 import { HttpClient } from '@angular/common/http';
 import { apiUrl } from '../../../../../environments/environment';
-import { catchError, map } from 'rxjs/operators';
-import { Observable, throwError } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { taskStatusList } from '../../../../constants/task.constants';
 import { IFilteredTasks } from '../../../../shared/interfaces/filtered-tasks';
 
@@ -11,15 +11,23 @@ import { IFilteredTasks } from '../../../../shared/interfaces/filtered-tasks';
   providedIn: 'root'
 })
 export class TaskService {
+  private defaultObject = { todo: [], progress: [], testing: [], done: [] };
+  private taskListObject: IFilteredTasks = this.defaultObject;
+  private taskSubject = new BehaviorSubject<IFilteredTasks>(this.defaultObject);
+  public tasks$: Observable<IFilteredTasks>;
 
   constructor(private httpClient: HttpClient) {
+    this.tasks$ = this.taskSubject.asObservable();
+    this.getAllTasks().subscribe();
   }
 
   public createTask(task: ITask): Observable<ITask | never> {
     const url = apiUrl + '/task';
-    return this.httpClient.post<ITask>(url, task).pipe(
+    return this.httpClient.post<{task: ITask}>(url, task).pipe(
       map(response => {
-        return response;
+        this.taskListObject.todo.push(response.task);
+        this.taskSubject.next(this.taskListObject);
+        return response.task;
       }),
       catchError(error => {
         return throwError(error);
@@ -44,6 +52,10 @@ export class TaskService {
           }
           return acc;
         }, {} as IFilteredTasks);
+      }),
+      tap((object) => {
+        this.taskListObject = object;
+        this.taskSubject.next(this.taskListObject);
       }),
       catchError(error => {
         return throwError(error);

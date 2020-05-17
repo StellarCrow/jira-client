@@ -11,19 +11,17 @@ import { IFilteredTasks } from '../../../../shared/interfaces/filtered-tasks';
   providedIn: 'root'
 })
 export class TaskService {
-  private defaultObject = { todo: [], progress: [], testing: [], done: [] };
-  private taskListObject: IFilteredTasks = this.defaultObject;
-  private taskSubject = new BehaviorSubject<IFilteredTasks>(this.defaultObject);
-  public tasks$: Observable<IFilteredTasks>;
+  private taskListObject: IFilteredTasks;
+  private taskSubject = new BehaviorSubject<IFilteredTasks>({ todo: [], progress: [], testing: [], done: [] });
+  public tasks$: Observable<IFilteredTasks> = this.taskSubject.asObservable();
 
   constructor(private httpClient: HttpClient) {
-    this.tasks$ = this.taskSubject.asObservable();
     this.getAllTasks().subscribe();
   }
 
   public createTask(task: ITask): Observable<ITask | never> {
     const url = apiUrl + '/task';
-    return this.httpClient.post<{task: ITask}>(url, task).pipe(
+    return this.httpClient.post<{ task: ITask }>(url, task).pipe(
       map(response => {
         this.taskListObject.todo.push(response.task);
         this.taskSubject.next(this.taskListObject);
@@ -42,11 +40,10 @@ export class TaskService {
         return response.tasks.reduce((acc, item) => {
           for (const status of Object.keys(taskStatusList)) {
             const arrayName = status.toLowerCase();
+            if (!acc[arrayName]) {
+              acc[arrayName] = [];
+            }
             if (taskStatusList[status] === item.status) {
-              if (!acc[arrayName]) {
-                acc[arrayName] = [];
-              }
-
               acc[arrayName].push(item);
             }
           }
@@ -56,6 +53,18 @@ export class TaskService {
       tap((object) => {
         this.taskListObject = object;
         this.taskSubject.next(this.taskListObject);
+      }),
+      catchError(error => {
+        return throwError(error);
+      })
+    );
+  }
+
+  public changeTaskStatus(id: string, status: string): Observable<string | never> {
+    const url = apiUrl + `/task/${id}`;
+    return this.httpClient.patch<{ status: string }>(url, { status }).pipe(
+      map(response => {
+        return response.status;
       }),
       catchError(error => {
         return throwError(error);

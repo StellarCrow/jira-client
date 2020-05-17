@@ -15,6 +15,18 @@ export class UsersService {
   constructor(private httpClient: HttpClient) {
   }
 
+  public getCurrentUser(): Observable<IUser | never> {
+    const url = apiUrl + '/user';
+    return this.httpClient.get<IUser>(url).pipe(
+      map(user => {
+        return user;
+      }),
+      catchError(error => {
+        return throwError(error);
+      })
+    );
+  }
+
   public getUsersOptionList(): Observable<ISelectOption[] | never> {
     const url = apiUrl + '/users';
     return this.httpClient.get<IUser[]>(url).pipe(

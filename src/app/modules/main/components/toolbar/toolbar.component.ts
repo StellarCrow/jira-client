@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SidenavService } from '../../services/sidenav/sidenav.service';
 import { AuthService } from '../../../../core/services/auth/auth.service';
 import { Router } from '@angular/router';
@@ -11,6 +11,7 @@ import { AddTaskModalComponent } from '../add-task-modal/add-task-modal.componen
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent {
+  @Input() username: string;
 
   constructor(public dialog: MatDialog,
               private sidenavService: SidenavService,

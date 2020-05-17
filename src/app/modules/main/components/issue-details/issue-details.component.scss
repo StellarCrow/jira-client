@@ -1,0 +1,13 @@
+.content {
+  &__row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+
+  &__column {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+  }
+}

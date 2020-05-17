@@ -4,7 +4,17 @@
   <div class="panel-content content">
       <div class="content__row">
         <div class="content__column">
-          <div class="content__type">{{type}}</div>
+          <div class="content__type">
+            <form [formGroup]="formType">
+              <app-form-select class="form__field"
+                               [controlName]="'type'"
+                               [selectionList]="taskTypes"
+                               [parentForm]="formType"
+                               [selectedValue]="type"
+                               [label]="'Issue Type'"
+              ></app-form-select>
+            </form>
+          </div>
           <div class="content__priority">{{priority}}</div>
         </div>
         <div class="content__column">

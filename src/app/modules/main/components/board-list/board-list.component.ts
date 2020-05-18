@@ -37,7 +37,7 @@ export class BoardListComponent {
       const taskId = event.container.data[elementIndex]._id;
       const listId = event.container.id.toUpperCase();
       const status = taskStatusList[listId];
-      this.issueService.updateStatus(taskId, status).subscribe();
+      this.issueService.updateIssue(taskId, {status}).subscribe();
     }
   }
 

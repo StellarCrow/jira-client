@@ -1,13 +1,50 @@
+@import "setup/variables";
+
 .content {
   &__row {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
+    align-items: center;
   }
 
   &__column {
+    flex: 0 1 45%;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
+  }
+
+  &__name {
+    flex: 0 1 20%;
+    font-weight: $light;
+    color: $gray--dark;
+    font-size: 1.2em;
+  }
+
+  &__value {
+    flex: 0 1 75%;
+    text-align: right;
+  }
+}
+
+.status {
+  padding: 0.3em 0.4em;
+  border-radius: 0.3em;
+
+  &--done {
+    background-color: $done-color;
+  }
+
+  &--progress {
+    background-color: $progress-color;
+  }
+
+  &--testing {
+    background-color: $testing-color;
+  }
+
+  &--todo {
+    background-color: $todo-color;
   }
 }

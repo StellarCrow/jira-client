@@ -24,11 +24,11 @@ export class IssueService {
     );
   }
 
-  public updateStatus(id: string, status: string): Observable<string | never> {
+  public updateIssue(id: string, update: object): Observable<string | never> {
     const url = apiUrl + `/task/${id}`;
-    return this.httpClient.patch<{ status: string }>(url, { status }).pipe(
+    return this.httpClient.patch<{ message: string }>(url, { update }).pipe(
       map(response => {
-        return response.status;
+        return response.message;
       }),
       catchError(error => {
         return throwError(error);

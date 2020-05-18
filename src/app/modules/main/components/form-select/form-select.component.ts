@@ -18,11 +18,7 @@ export class FormSelectComponent implements OnInit {
   @Input() selectedValue: string;
 
   ngOnInit(): void {
-    if (this.selectedValue) {
-      this.selected = this.selectionList.find((opt) => opt.value === this.selectedValue);
-    } else {
-      this.selected = this.selectionList[0];
-    }
+    this.selected = this.selectionList.find((opt) => opt.value === this.selectedValue) || this.selectionList[0];
   }
 
   public onChange(event: MatSelectChange): void {

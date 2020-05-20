@@ -1,7 +1,28 @@
-<app-issue-details *ngIf="task" [type]="task?.type"
-                   [priority]="task?.priority"
-                   [resolution]="task?.resolution"
-                   [status]="task?.status"
-                   (onChanged)="updateIssue($event)"
->
-</app-issue-details>
+<<<<<<< Updated upstream
+<p>task-page works!</p>
+=======
+<div class="task">
+  <div class="task__summary">
+
+  </div>
+  <div class="task__row">
+    <div class="task__field">
+      <app-issue-details *ngIf="task" [type]="task?.type"
+                         [priority]="task?.priority"
+                         [resolution]="task?.resolution"
+                         [status]="task?.status"
+                         (onChanged)="updateIssue($event)"
+      >
+      </app-issue-details>
+    </div>
+    <div class="task__field">
+      <app-people *ngIf="task"
+                  [assignee]="task.assignee"
+                  [reporter]="task.reporter.name"
+                  (onChanged)="updateIssue($event)"></app-people>
+    </div>
+  </div>
+</div>
+
+
+>>>>>>> Stashed changes

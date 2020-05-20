@@ -17,6 +17,8 @@ import { CardComponent } from './components/card/card.component';
 import { TaskPageComponent } from './components/pages/task-page/task-page.component';
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 import { IssueDetailsComponent } from './components/issue-details/issue-details.component';
+import { PeopleComponent } from './components/people/people.component';
+
 
 
 @NgModule({
@@ -33,7 +35,8 @@ import { IssueDetailsComponent } from './components/issue-details/issue-details.
     CardComponent,
     TaskPageComponent,
     ExpansionPanelComponent,
-    IssueDetailsComponent
+    IssueDetailsComponent,
+    PeopleComponent
   ],
   imports: [
     CommonModule,

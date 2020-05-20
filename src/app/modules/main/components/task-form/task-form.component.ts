@@ -1,6 +1,12 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { taskPriorityList, taskTypeList, unassignedIcon, unassignedIconColor } from '../../../../constants/task.constants';
+import {
+  taskPriorityList,
+  taskTypeList,
+  unassignedIcon,
+  unassignedIconColor,
+  unassignedSelectOption
+} from '../../../../constants/task.constants';
 import { ISelectOption } from '../../../../shared/interfaces/select-option';
 import { ITask } from '../../../../shared/interfaces/task';
 import { UsersService } from '../../services/users/users.service';
@@ -27,7 +33,7 @@ export class TaskFormComponent implements OnInit {
   }
 
   private fillAssigneeList(): void {
-    const unassigned: ISelectOption = { name: 'Unassigned', value: 'unassigned', icon: unassignedIcon, color: unassignedIconColor };
+    const unassigned: ISelectOption = unassignedSelectOption;
     this.assigneeList.push(unassigned);
     this.usersService.getUsersOptionList().subscribe((result) => {
         this.assigneeList = [...this.assigneeList, ...result];

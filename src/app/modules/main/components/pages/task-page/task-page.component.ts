@@ -3,6 +3,7 @@ import { ITask } from '../../../../../shared/interfaces/task';
 import { IssueService } from '../../../services/issue/issue.service';
 import { ActivatedRoute } from '@angular/router';
 import { NotificationService } from '../../../../../shared/services/notification/notification.service';
+import { IUser } from '../../../../../shared/interfaces/user';
 
 @Component({
   selector: 'app-task-page',
@@ -11,6 +12,7 @@ import { NotificationService } from '../../../../../shared/services/notification
 })
 export class TaskPageComponent implements OnInit {
   public task: ITask;
+  public reporter: string;
   private taskId: string;
 
   constructor(private issueService: IssueService,
@@ -25,6 +27,7 @@ export class TaskPageComponent implements OnInit {
     });
     this.issueService.getIssueInfo(this.taskId).subscribe((task) => {
       this.task = task;
+      this.reporter = this.task.reporter && (this.task.reporter as IUser).name || '';
     });
   }
 

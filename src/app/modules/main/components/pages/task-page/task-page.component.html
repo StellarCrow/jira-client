@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-<p>task-page works!</p>
-=======
 <div class="task">
   <div class="task__summary">
 
@@ -18,11 +15,8 @@
     <div class="task__field">
       <app-people *ngIf="task"
                   [assignee]="task.assignee"
-                  [reporter]="task.reporter.name"
+                  [reporter]="reporter"
                   (onChanged)="updateIssue($event)"></app-people>
     </div>
   </div>
 </div>
-
-
->>>>>>> Stashed changes

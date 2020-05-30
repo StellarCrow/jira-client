@@ -1,7 +1,20 @@
+@import "setup/variables";
 .toolbar {
   display: flex;
   align-items: center;
   height: 100%;
+
+  &__link {
+    color: $text-color--light;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: 0.3s ease;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
 
   &__group {
     display: flex;

@@ -24,8 +24,11 @@ export class IssueService {
     );
   }
 
-  public updateIssue(id: string, update: object): Observable<string | never> {
-    const url = apiUrl + `/task/${id}`;
+  public updateIssue(id: string, update: object, option?: string): Observable<string | never> {
+    let url = apiUrl + `/task/${id}/`;
+    if (option) {
+      url += option;
+    }
     return this.httpClient.patch<{ message: string }>(url, { update }).pipe(
       map(response => {
         return response.message;

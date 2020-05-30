@@ -23,8 +23,6 @@ export class PeopleComponent implements OnInit {
   ngOnInit(): void {
     this.fillAssigneeList();
     this.initFormAssignee();
-    console.log(this.assignee);
-    console.log(this.formAssignee.get('assignee').value);
   }
 
   private initFormAssignee() {
@@ -41,7 +39,6 @@ export class PeopleComponent implements OnInit {
     this.assigneeList.push(unassigned);
     this.usersService.getUsersOptionList().subscribe((result) => {
         this.assigneeList = [...this.assigneeList, ...result];
-        console.log('list', this.assigneeList);
       },
       res => {
         console.log(res.error.message);

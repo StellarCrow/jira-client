@@ -33,6 +33,7 @@ export class TaskPageComponent implements OnInit {
 
   public updateIssue(issue: { type: string, value: string }): void {
     let update;
+    let option = '';
     switch (issue.type) {
       case 'type': {
         update = { type: issue.value };
@@ -44,11 +45,12 @@ export class TaskPageComponent implements OnInit {
       }
       case 'assignee': {
         update = { assignee: issue.value };
+        option = 'assign';
         break;
       }
     }
 
-    this.issueService.updateIssue(this.taskId, update).subscribe(res => {
+    this.issueService.updateIssue(this.taskId, update, option).subscribe(res => {
       this.notificationService.notification$.next('Issue was updated');
     }, err => {
       this.notificationService.notification$.next('Error while updating issue.');

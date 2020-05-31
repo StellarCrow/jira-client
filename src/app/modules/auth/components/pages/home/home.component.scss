@@ -3,11 +3,12 @@
 .home {
   display: flex;
   min-height: 100vh;
-  background: $primary-color;
+  background: url(/assets/images/pattern.jpg) no-repeat center top / cover;
 
   &__content {
     margin: auto;
     max-width: 60%;
+    min-width: 35%;
     padding: 3% 4%;
     box-shadow: 0 0 5px $gray;
     background: $text-color--light;

@@ -37,13 +37,10 @@ export class PeopleComponent implements OnInit {
   private fillAssigneeList(): void {
     const unassigned: ISelectOption = unassignedSelectOption;
     this.assigneeList.push(unassigned);
-    this.usersService.getUsersOptionList().subscribe((result) => {
-        this.assigneeList = [...this.assigneeList, ...result];
-      },
-      res => {
-        console.log(res.error.message);
-      }
-    );
+    const users = this.usersService.getUsersOptionList();
+    if (users) {
+      this.assigneeList = [...this.assigneeList, ...users];
+    }
   }
 
 }

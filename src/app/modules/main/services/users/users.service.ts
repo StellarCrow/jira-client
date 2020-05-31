@@ -11,6 +11,7 @@ import { assigneeIconColorDefault, assigneeIconDefault } from '../../../../const
   providedIn: 'root'
 })
 export class UsersService {
+  private usersOptionList: ISelectOption[];
 
   constructor(private httpClient: HttpClient) {
   }
@@ -27,9 +28,9 @@ export class UsersService {
     );
   }
 
-  public getUsersOptionList(): Observable<ISelectOption[] | never> {
+  public defineUsersOptionList(): void {
     const url = apiUrl + '/users';
-    return this.httpClient.get<IUser[]>(url).pipe(
+    this.httpClient.get<IUser[]>(url).pipe(
       map(users => {
         return users.map(user => {
           return { name: user.name, value: user._id, icon: assigneeIconDefault, color: assigneeIconColorDefault };
@@ -38,6 +39,12 @@ export class UsersService {
       catchError(error => {
         return throwError(error);
       })
-    );
+    ).subscribe(res => {
+      this.usersOptionList = res;
+    });
+  }
+
+  public getUsersOptionList(): ISelectOption[] {
+    return this.usersOptionList;
   }
 }

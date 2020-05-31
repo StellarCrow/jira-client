@@ -27,6 +27,7 @@ export class MainPageComponent implements AfterViewInit, OnInit {
     this.usersService.getCurrentUser().subscribe((user) => {
       this.username = user.name;
     });
+    this.usersService.defineUsersOptionList();
   }
 
   ngAfterViewInit(): void {

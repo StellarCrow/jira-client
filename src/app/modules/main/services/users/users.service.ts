@@ -28,20 +28,19 @@ export class UsersService {
     );
   }
 
-  public defineUsersOptionList(): void {
+  public defineUsersOptionList(): Observable<ISelectOption[] | never> {
     const url = apiUrl + '/users';
-    this.httpClient.get<IUser[]>(url).pipe(
+    return this.httpClient.get<IUser[]>(url).pipe(
       map(users => {
-        return users.map(user => {
+        this.usersOptionList = users.map(user => {
           return { name: user.name, value: user._id, icon: assigneeIconDefault, color: assigneeIconColorDefault };
         });
+        return this.usersOptionList;
       }),
       catchError(error => {
         return throwError(error);
       })
-    ).subscribe(res => {
-      this.usersOptionList = res;
-    });
+    );
   }
 
   public getUsersOptionList(): ISelectOption[] {

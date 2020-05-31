@@ -19,7 +19,7 @@
     flex: 0 1 20%;
     font-weight: $light;
     color: $gray--dark;
-    font-size: 1.2em;
+    font-size: $issue-details-name;
   }
 
   &__value {

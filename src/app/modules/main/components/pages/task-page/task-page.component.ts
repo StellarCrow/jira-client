@@ -32,34 +32,8 @@ export class TaskPageComponent implements OnInit {
   }
 
   public updateIssue(issue: { type: string, value: string }): void {
-    let update;
-    let option = '';
-    switch (issue.type) {
-      case 'type': {
-        update = { type: issue.value };
-        break;
-      }
-      case 'priority': {
-        update = { priority: issue.value };
-        break;
-      }
-      case 'assignee': {
-        update = { assignee: issue.value };
-        option = 'assign';
-        break;
-      }
-      case 'summary': {
-        update = { summary: issue.value };
-        break;
-      }
-      case 'description': {
-        update = { description: issue.value };
-        break;
-      }
-    }
-
-    update.updated = Date.now();
-    this.issueService.updateIssue(this.taskId, update, option).subscribe(res => {
+    const update = {[issue.type]: issue.value, updated: new Date()};
+    this.issueService.updateIssue(this.taskId, update).subscribe(res => {
       this.notificationService.notification$.next('Issue was updated');
     }, err => {
       this.notificationService.notification$.next('Error while updating issue.');

@@ -1,6 +1,16 @@
 .description {
+
+  &__form {
+    display: flex;
+    flex-flow: column nowrap;
+  }
+
   &__form,
   &__field {
     width: 100%;
+  }
+
+  &__button {
+    align-self: flex-end;
   }
 }

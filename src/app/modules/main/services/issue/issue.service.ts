@@ -24,10 +24,10 @@ export class IssueService {
     );
   }
 
-  public updateIssue(id: string, update: object, option?: string): Observable<string | never> {
+  public updateIssue(id: string, update: Partial<ITask>): Observable<string | never> {
     let url = apiUrl + `/task/${id}/`;
-    if (option) {
-      url += option;
+    if (update.assignee) {
+      url += 'assign';
     }
     return this.httpClient.patch<{ message: string }>(url, { update }).pipe(
       map(response => {

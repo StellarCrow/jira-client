@@ -20,13 +20,11 @@ export class IssueDescriptionComponent implements OnInit {
     this.formDescription = this.formBuilder.group({
       description: [this.description, [Validators.maxLength(1000)]]
     });
+  }
 
-    this.formDescription.get('description').valueChanges.pipe(
-      distinctUntilChanged(),
-      debounceTime(1000)
-    ).subscribe(value => {
-      this.onChanged.emit({ value, type: 'description' });
-    });
+  public onSubmit(): void {
+    const value = this.formDescription.value.description;
+    this.onChanged.emit({ value, type: 'description' });
   }
 
 }

@@ -35,11 +35,9 @@ export class PeopleComponent implements OnInit {
   }
 
   private fillAssigneeList(): void {
-    const unassigned: ISelectOption = unassignedSelectOption;
-    this.assigneeList.push(unassigned);
     const users = this.usersService.getUsersOptionList();
     if (users) {
-      this.assigneeList = [...this.assigneeList, ...users];
+      this.assigneeList = [unassignedSelectOption, ...users];
     }
   }
 

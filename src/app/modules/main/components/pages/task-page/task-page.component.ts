@@ -58,6 +58,7 @@ export class TaskPageComponent implements OnInit {
       }
     }
 
+    update.updated = Date.now();
     this.issueService.updateIssue(this.taskId, update, option).subscribe(res => {
       this.notificationService.notification$.next('Issue was updated');
     }, err => {

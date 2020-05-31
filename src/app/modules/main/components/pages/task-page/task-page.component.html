@@ -29,6 +29,13 @@
                     [reporter]="reporter"
                     (onChanged)="updateIssue($event)"></app-people>
       </div>
+      <div class="task__field">
+        <app-issue-dates *ngIf="task"
+                         [created]="task.created"
+                         [updated]="task.updated"
+                         [deadline]="task.deadline">
+        </app-issue-dates>
+      </div>
     </div>
   </div>
 </div>

@@ -20,6 +20,7 @@ import { IssueDetailsComponent } from './components/issue-details/issue-details.
 import { PeopleComponent } from './components/people/people.component';
 import { IssueSummaryComponent } from './components/issue-summary/issue-summary.component';
 import { IssueDescriptionComponent } from './components/issue-description/issue-description.component';
+import { IssueDatesComponent } from './components/issue-dates/issue-dates.component';
 
 
 
@@ -40,7 +41,8 @@ import { IssueDescriptionComponent } from './components/issue-description/issue-
     IssueDetailsComponent,
     PeopleComponent,
     IssueSummaryComponent,
-    IssueDescriptionComponent
+    IssueDescriptionComponent,
+    IssueDatesComponent
   ],
   imports: [
     CommonModule,

@@ -5,8 +5,8 @@ export interface ITask {
   title: string;
   summary: string;
   description: string;
-  reporter: IUser;
-  assignee: IUser;
+  reporter: string | IUser;
+  assignee: string | IUser;
   created: Date;
   updated: Date;
   deadline: Date;

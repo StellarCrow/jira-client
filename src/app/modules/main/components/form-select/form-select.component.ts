@@ -15,9 +15,10 @@ export class FormSelectComponent implements OnInit {
   @Input() controlName: FormControl;
   @Input() label: string;
   @Input() selectionList: ISelectOption[];
+  @Input() selectedValue: string;
 
   ngOnInit(): void {
-    this.selected = this.selectionList[0];
+    this.selected = this.selectionList.find((opt) => opt.value === this.selectedValue) || this.selectionList[0];
   }
 
   public onChange(event: MatSelectChange): void {

@@ -1,0 +1,25 @@
+<app-expansion-panel>
+  <h3 class="panel-title">People</h3>
+  <div class="panel-content people">
+    <div class="people__field">
+      <div class="people__name">Assignee</div>
+      <div class="people__value">
+        <form [formGroup]="formAssignee">
+          <app-form-select class="form__field"
+                           [controlName]="'assignee'"
+                           [selectionList]="assigneeList"
+                           [parentForm]="formAssignee"
+                           [label]="'Assignee'"
+                           [selectedValue]="assignee"
+          ></app-form-select>
+        </form>
+      </div>
+    </div>
+    <div class="people__field">
+      <div class="people__name">Reporter</div>
+      <div class="people__value">
+       {{reporter}}
+      </div>
+    </div>
+  </div>
+</app-expansion-panel>

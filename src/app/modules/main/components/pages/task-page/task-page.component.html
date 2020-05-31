@@ -1,6 +1,9 @@
 <div class="task">
   <div class="task__summary">
-
+    <app-issue-summary *ngIf="task"
+                       [summary]="task.summary"
+                       (onChanged)="updateIssue($event)">
+    </app-issue-summary>
   </div>
   <div class="task__row">
     <div class="task__field">

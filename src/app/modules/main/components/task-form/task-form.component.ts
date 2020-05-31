@@ -50,7 +50,7 @@ export class TaskFormComponent implements OnInit {
       assignee: ['', [Validators.required]],
       priority: ['', [Validators.required]],
       deadline: ['', [Validators.required]],
-      summary: ['', [Validators.required]],
+      summary: ['', [Validators.required, Validators.maxLength(100)]],
       description: ['', [Validators.maxLength(10000)]],
     });
   }

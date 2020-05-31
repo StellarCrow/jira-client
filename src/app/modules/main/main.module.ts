@@ -18,6 +18,7 @@ import { TaskPageComponent } from './components/pages/task-page/task-page.compon
 import { ExpansionPanelComponent } from './components/expansion-panel/expansion-panel.component';
 import { IssueDetailsComponent } from './components/issue-details/issue-details.component';
 import { PeopleComponent } from './components/people/people.component';
+import { IssueSummaryComponent } from './components/issue-summary/issue-summary.component';
 
 
 
@@ -36,7 +37,8 @@ import { PeopleComponent } from './components/people/people.component';
     TaskPageComponent,
     ExpansionPanelComponent,
     IssueDetailsComponent,
-    PeopleComponent
+    PeopleComponent,
+    IssueSummaryComponent
   ],
   imports: [
     CommonModule,

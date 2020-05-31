@@ -6,20 +6,29 @@
     </app-issue-summary>
   </div>
   <div class="task__row">
-    <div class="task__field">
-      <app-issue-details *ngIf="task" [type]="task?.type"
-                         [priority]="task?.priority"
-                         [resolution]="task?.resolution"
-                         [status]="task?.status"
-                         (onChanged)="updateIssue($event)"
-      >
-      </app-issue-details>
+    <div class="task__column">
+      <div class="task__field">
+        <app-issue-details *ngIf="task" [type]="task?.type"
+                           [priority]="task?.priority"
+                           [resolution]="task?.resolution"
+                           [status]="task?.status"
+                           (onChanged)="updateIssue($event)"
+        >
+        </app-issue-details>
+      </div>
+      <div class="task__field">
+        <app-issue-description *ngIf="task" [description]="task.description"
+                               (onChanged)="updateIssue($event)">
+        </app-issue-description>
+      </div>
     </div>
-    <div class="task__field">
-      <app-people *ngIf="task"
-                  [assignee]="task.assignee"
-                  [reporter]="reporter"
-                  (onChanged)="updateIssue($event)"></app-people>
+    <div class="task__column">
+      <div class="task__field">
+        <app-people *ngIf="task"
+                    [assignee]="task.assignee"
+                    [reporter]="reporter"
+                    (onChanged)="updateIssue($event)"></app-people>
+      </div>
     </div>
   </div>
 </div>

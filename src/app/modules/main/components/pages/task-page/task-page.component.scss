@@ -10,11 +10,15 @@
     justify-content: space-between;
   }
 
-  &__field:first-child {
+  &__column:first-child {
     flex: 0 1 65%
   }
 
-  &__field:last-child {
+  &__column:last-child {
     flex: 0 1 30%;
+  }
+
+  &__field {
+    margin-bottom: 30px;
   }
 }

@@ -52,6 +52,10 @@ export class TaskPageComponent implements OnInit {
         update = { summary: issue.value };
         break;
       }
+      case 'description': {
+        update = { description: issue.value };
+        break;
+      }
     }
 
     this.issueService.updateIssue(this.taskId, update, option).subscribe(res => {

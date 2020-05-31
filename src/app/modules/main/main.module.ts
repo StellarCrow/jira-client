@@ -19,6 +19,7 @@ import { ExpansionPanelComponent } from './components/expansion-panel/expansion-
 import { IssueDetailsComponent } from './components/issue-details/issue-details.component';
 import { PeopleComponent } from './components/people/people.component';
 import { IssueSummaryComponent } from './components/issue-summary/issue-summary.component';
+import { IssueDescriptionComponent } from './components/issue-description/issue-description.component';
 
 
 
@@ -38,7 +39,8 @@ import { IssueSummaryComponent } from './components/issue-summary/issue-summary.
     ExpansionPanelComponent,
     IssueDetailsComponent,
     PeopleComponent,
-    IssueSummaryComponent
+    IssueSummaryComponent,
+    IssueDescriptionComponent
   ],
   imports: [
     CommonModule,

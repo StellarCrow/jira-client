@@ -28,5 +28,4 @@ export class IssueSummaryComponent implements OnInit {
       this.onChanged.emit({ value, type: 'summary' });
     });
   }
-
 }

@@ -1,0 +1,16 @@
+<app-expansion-panel>
+  <h3 class="panel-title">Description</h3>
+  <div class="panel-content description">
+    <form [formGroup]="formDescription" class="description__form">
+      <mat-form-field class="form__field" appearance="outline" class="description__field">
+        <mat-label class="form-field__label">Description</mat-label>
+        <textarea
+          matInput
+          formControlName="description"
+          placeholder="Description..."
+          class="form-field__textarea"
+        ></textarea>
+      </mat-form-field>
+    </form>
+  </div>
+</app-expansion-panel>

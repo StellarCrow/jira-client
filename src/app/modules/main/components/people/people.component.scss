@@ -1,0 +1,7 @@
+@import "setup/variables";
+
+.people {
+  &__value {
+    font-weight: $bold;
+  }
+}

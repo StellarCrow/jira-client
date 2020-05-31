@@ -1,0 +1,12 @@
+@import "setup/variables";
+
+.panel {
+  &__header {
+    background-color: $gray--light;
+    border: 1px solid $gray;
+  }
+
+  &__title {
+    color: $primary-color;
+  }
+}

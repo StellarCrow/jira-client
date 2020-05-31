@@ -1,7 +1,7 @@
 <div class="heading">
   <h2 class="title">Login</h2>
 </div>
-<form [formGroup]="formLogin" class="form" (submit)="onSubmit()" >
+<form [formGroup]="formLogin" class="form" (submit)="onSubmit()">
   <mat-form-field class="form__form-field" appearance="outline">
     <mat-label>Email</mat-label>
     <input matInput type="email" class="form__input" formControlName="email" placeholder="jiraldina@jirka.com">
@@ -13,6 +13,10 @@
   </mat-form-field>
   <div class="form__error">
     {{errorMessage}}
+  </div>
+  <div class="form__test">
+    Login: <b>jiraldina@test.com</b> <br/>
+    Password: <b>jirastan123</b>
   </div>
   <button
     class="form__button button"

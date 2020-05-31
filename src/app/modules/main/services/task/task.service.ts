@@ -59,16 +59,4 @@ export class TaskService {
       })
     );
   }
-
-  public changeTaskStatus(id: string, status: string): Observable<string | never> {
-    const url = apiUrl + `/task/${id}`;
-    return this.httpClient.patch<{ status: string }>(url, { status }).pipe(
-      map(response => {
-        return response.status;
-      }),
-      catchError(error => {
-        return throwError(error);
-      })
-    );
-  }
-}
+};

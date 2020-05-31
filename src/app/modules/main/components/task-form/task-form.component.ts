@@ -1,6 +1,12 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { taskPriorityList, taskTypeList, unassignedIcon, unassignedIconColor } from '../../../../constants/task.constants';
+import {
+  taskPriorityList,
+  taskTypeList,
+  unassignedIcon,
+  unassignedIconColor,
+  unassignedSelectOption
+} from '../../../../constants/task.constants';
 import { ISelectOption } from '../../../../shared/interfaces/select-option';
 import { ITask } from '../../../../shared/interfaces/task';
 import { UsersService } from '../../services/users/users.service';
@@ -27,15 +33,10 @@ export class TaskFormComponent implements OnInit {
   }
 
   private fillAssigneeList(): void {
-    const unassigned: ISelectOption = { name: 'Unassigned', value: 'unassigned', icon: unassignedIcon, color: unassignedIconColor };
-    this.assigneeList.push(unassigned);
-    this.usersService.getUsersOptionList().subscribe((result) => {
-        this.assigneeList = [...this.assigneeList, ...result];
-      },
-      res => {
-        console.log(res.error.message);
-      }
-    );
+    const users = this.usersService.getUsersOptionList();
+    if (users) {
+      this.assigneeList = [unassignedSelectOption, ...users];
+    }
   }
 
   private createForm(): void {
@@ -44,7 +45,7 @@ export class TaskFormComponent implements OnInit {
       assignee: ['', [Validators.required]],
       priority: ['', [Validators.required]],
       deadline: ['', [Validators.required]],
-      summary: ['', [Validators.required]],
+      summary: ['', [Validators.required, Validators.maxLength(100)]],
       description: ['', [Validators.maxLength(10000)]],
     });
   }

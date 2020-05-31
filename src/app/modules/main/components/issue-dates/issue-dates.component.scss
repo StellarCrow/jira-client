@@ -1,0 +1,15 @@
+@import "setup/variables";
+
+.dates {
+  padding: 4% 0;
+
+  &__field {
+    margin-bottom: 1em;
+    font-weight: $light;
+  }
+
+  &__name {
+    font-weight: $medium;
+    margin-right: 0.5em;
+  }
+}

@@ -100,3 +100,4 @@ export const unassignedIcon = 'sentiment_satisfied_alt';
 export const assigneeIconDefault = 'face';
 export const unassignedIconColor = '#676767';
 export const assigneeIconColorDefault = '#000000';
+export const unassignedSelectOption = { name: 'Unassigned', value: 'unassigned', icon: unassignedIcon, color: unassignedIconColor };

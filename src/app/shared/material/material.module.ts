@@ -17,6 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCardModule } from '@angular/material/card';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 const components = [
   MatCheckboxModule,
@@ -36,7 +37,8 @@ const components = [
   MatSelectModule,
   MatDividerModule,
   MatSnackBarModule,
-  MatCardModule
+  MatCardModule,
+  MatExpansionModule
 ];
 
 @NgModule({

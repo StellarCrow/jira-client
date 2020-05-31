@@ -1,0 +1,52 @@
+<app-expansion-panel>
+  <h3 class="panel-title">Details</h3>
+
+  <div class="panel-content content">
+    <div class="content__row">
+      <div class="content__column">
+        <div class="content__row">
+          <div class="content__name">Type</div>
+          <div class="content__value">
+            <form [formGroup]="formType">
+              <app-form-select class="form__field"
+                               [controlName]="'type'"
+                               [selectionList]="taskTypes"
+                               [parentForm]="formType"
+                               [selectedValue]="type"
+                               [label]="'Issue Type'"
+              ></app-form-select>
+            </form>
+          </div>
+        </div>
+        <div class="content__row">
+          <div class="content__name">Priority</div>
+          <div class="content__value">
+            <form [formGroup]="formPriority">
+              <app-form-select class="form__field"
+                               [controlName]="'priority'"
+                               [selectionList]="taskPriorities"
+                               [parentForm]="formPriority"
+                               [selectedValue]="priority"
+                               [label]="'Issue Priority'"
+              ></app-form-select>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="content__column">
+        <div class="content__row">
+          <div class="content__name">Status</div>
+          <div class="content__value">
+            <span class="status" [ngClass]="statusStyle">{{status}}</span>
+          </div>
+        </div>
+        <div class="content__row">
+          <div class="content__name">Resolution</div>
+          <div class="content__value">
+            {{resolution}}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-expansion-panel>

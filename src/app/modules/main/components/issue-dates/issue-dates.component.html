@@ -1,0 +1,17 @@
+<app-expansion-panel>
+  <h3 class="panel-title">Dates</h3>
+  <div class="panel-content dates">
+    <div class="dates__field">
+      <span class="dates__name">Created: </span>
+      {{created | date: 'MMMM d, y, h:mm'}}
+    </div>
+    <div class="dates__field">
+      <span class="dates__name">Updated: </span>
+      {{updated | date: 'MMMM d, y, h:mm'}}
+    </div>
+    <div class="dates__field">
+      <span class="dates__name">Due to: </span>
+      {{deadline | date: 'MMMM d, y'}}
+    </div>
+  </div>
+</app-expansion-panel>

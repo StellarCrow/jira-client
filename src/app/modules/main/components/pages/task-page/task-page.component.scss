@@ -1,0 +1,24 @@
+@import "setup/variables";
+
+.task {
+  padding: 4%;
+
+  &__row {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__column:first-child {
+    flex: 0 1 65%
+  }
+
+  &__column:last-child {
+    flex: 0 1 30%;
+  }
+
+  &__field {
+    margin-bottom: 30px;
+  }
+}

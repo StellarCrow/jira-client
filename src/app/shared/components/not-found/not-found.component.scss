@@ -1,0 +1,21 @@
+@import "setup/variables";
+
+.page {
+  min-height: 100vh;
+  display: flex;
+
+  &__content {
+    margin: auto;
+    text-align: center;
+    max-width: 70%;
+  }
+
+  &__text {
+    font-weight: $medium;
+    font-size: 1.3em;
+  }
+
+  &__image {
+    max-width: 80%;
+  }
+}
